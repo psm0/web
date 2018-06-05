@@ -1,0 +1,104 @@
+/*maincss*/
+header{
+  z-index: -5;
+  background-image: url("image/dokdo.png.");
+  background-repeat: no-repeat;
+  background-position:center top;
+  height: 700px;
+  width: 900px;
+  border:5px ;
+  margin-left: 0px;
+  margin-right: 20%;
+}
+footer{
+  width: 900px;
+  height: 100px;
+  background-color: white;
+  margin-left:0px;
+}
+.logo{
+  display:inline-block;
+  position: absolute;
+ margin-left: 0%;
+ margin-top:-10px;
+}
+.login{
+  font-size: 12px;
+  left: 850px;
+  padding: 20px; }
+
+#menubar{
+  display: inline-block;
+  height: 30px;
+  width: 761px;
+ margin-left: 130px;
+ padding-top: 25px;
+ margin-right: 120px;
+}
+
+#menubar ul, li{
+  cursor: pointer;
+  list-style: none;
+  font-size: 19px;
+  float: left;
+  line-height:20px;
+  vertical-align:middle;
+  text-align: center;
+
+   }
+
+   a{text-decoration: none;}
+   a:hover{color: red;}
+  }
+  #menubar ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .menulink, .sublink {text-decoration: none;}
+ .topmenu:hover{
+   color: red;
+  }
+.topmenu:hover .sub {
+ height: 32px;
+}
+.sublink{
+text-decoration:none;
+display: block;
+width: 150px;
+font-size: 12px;
+font-weight: bold;
+margin-right: 5px;
+border: solid 1px black;
+
+}
+.sub{
+position: absolute;
+left: 400px;
+top: 80px;;
+height:0px;
+overflow: hidden;
+transition:height.2s;
+width: 770px;
+left:100px;
+}
+
+.sublink{
+color: black;
+background-color: white;
+border-radius : 50px;
+}
+.sublink:hover{
+color: red;
+}
+.sub li{
+display: inline-block;
+}
+  .dokdo{
+    display: inline-block;
+     margin-top: -5%;
+   .text{
+      font-size: 13px;
+      font-weight: bold;
+      margin-top:-14.5%;
+      margin-left: 25%;
