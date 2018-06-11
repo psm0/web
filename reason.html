@@ -3,50 +3,47 @@
 <head>
   <link type="text/css" rel="stylesheet" href="maincss.css">
   <Style>
-  sidebar{
+  sidebar{                                          /*사이드바*/
     position: absolute;
     left: 5px;
-    top: 145px;
+    top: 145px;                                   /* 왼쪽에 배치되게 조정*/
     background-color: lightblue;
-    border-width: 20px;
+    border-width: 20px;                          /*배경색깔 : lightblue*/
     border-style: solid;
     border-color: lightblue;
-    width: 205px;
+    width: 205px;                               /*굵기의 스타일,색깔, 크기지정*/
     height: 600px;
-    float: left;
   }
 
   sidebar li{
-    line-height: 200%;
+    line-height: 200%;                        /*줄간격 200%*/
+  }
 
-  }
-  sidebar a:hover{
-    color: red;
-  }
   footer img{
     position: relative;
-    top: 200px;
+    top: 200px;                                 /*푸터 이미지 위치 지정*/
     left: 60px;
   }
-  .text{position: relative; top: 70px; left: 300px;}
+  .text{position: relative; top: 70px; left: 300px;}    /*푸터 글씨 위치 지정*/
 
   contents{
     position: absolute;
-    background-color: white;
+    background-color: white;                        /*컨텐츠 요소들의 위치, 배경색깔 지정*/
     top:145px;
     left:230px;
-    border-style: solid;
+    border-style: solid;                            /*테두리 스타일, 색깔, 크기 지정*/
     border-color: white;
     border-width: 20px;
   }
-  p {display:inline-block; background : #90D000;
-    width : 17px; padding : 10px;
-    border-radius: 50px;
-    border-color: red; font-size: 10px;
-    font-weight: bold;
+  p {display:inline-block;                         /*자유롭게 배치되도록 조정*/
+    background : #90D000;                         /*요소 색깔*/
+    width : 17px; padding : 10px;                /*크기, 글자여백 지정*/
+    border-radius: 50px;                         /*요소들이 원형이 되게 지정*/
+    font-size: 10px;                            /*년도 글씨 크기*/
+    font-weight: bold;                          /*년도가 굵게 나오도록 지정*/
   }
 
-  .y512{position:absolute; top:170px;left:15px;}
+  .y512{position:absolute; top:170px;left:15px;}                 /*각 요소(버튼)들의 위치 지정*/
   .y1454{position:absolute; top:130px; left:90px;}
   .y1625{position:absolute; top:100px; left:170px;}
   .y1693{position:absolute; top:130px; left:260px;}
@@ -64,91 +61,88 @@
   .y1951{position:absolute; top:300px; left:10px;}
 
 
-      .reason{
-        position: absolute;
+      .reason{                                        /*작은 창 내용에 대한 속성들을 지정*/
+        position: absolute;                          /*작은 창 박스에 대한 위치들을 지정(작은창 뿐만 아니라 그에 대한 배경포함해서)*/
         top: -1000px;
         right: -1000px;
         bottom: -1000px;
         left: -1000px;
-        background:rgba(0,0,0,0.7);
-        opacity: 0;
-        -webkit-transition:opacity 400ms ease-in;
-        transition: opacity 400ms ease-in;
-        pointer-events: none;
+        background:rgba(0,0,0,0.7);                  /*배경 색깔 어둡게 지정*/
+        opacity: 0;                                 /*평상시에는 보이지 않게 하려고 투명도를 0으로 지정 */
+        transition: opacity 400ms ease-in;          /*opacity값을 400ms의 속도로 ease-in 서서히 진행하라라는 의미(0에서 1로든 1에서 0으로든) */
+        pointer-events: none;                      /*HTML 요소에서의 모든 클릭, 커서 옵션들을 비활성화해주는 속성 */
         }
       .reason:target{
-        opacity: 1;
-        pointer-events: auto;
+        opacity: 1;                              /*타겟(선택)되었을때 비로소 보임 */
+        pointer-events: auto;                    /*앞에서 비활성화되었던 이벤트를 다시 기본기능으로 해줌 */
       }
 
-      .reason pre{
+      .reason pre{                                 /*작은 창에서의 이미지, 글씨들(즉, 컨텐츠들)의 속성을 지정 */
         position: absolute;
         top:30%;
-        left: 30%;
-        min-width: 500px;
-        width:inherit;
-        min-height: 100px;
-        height:inherit;
-        padding: 16px;
+        left: 30%;                                /*작은 창 위치 지정*/
+        min-width: 500px;                        /*최소 크기 500px로 지정*/
+        min-height: 100px;                       /*최소 높이 100px로 지정*/
+        padding: 16px;                          /*컨텐츠들의 여백 간격 조정*/
         margin: 250px;
-        border-top: 26px solid orange;
-        background-color: white;
-        overflow: scroll;
+        border-top: 26px solid orange;          /*테두리 위에만 26PX크기에 직선형태, 오렌지색깔로 지정*/
+        background-color: white;                /*배경색깔은 흰색으로 지정*/
+        overflow: scroll;                       /*컨텐츠 요소가 넘쳤을때 스크롤링 되게 지정*/
       }
 
     pre img{
       display: inline-block;
-      margin-top:  40px;
+      margin-top:  40px;                        /*이미지 자체의 크기에 대한 여백 때문에 따로 조정함*/
       margin-left: 20px;}
 
-  .close{position: relative; top:-40px; left: 400px; width: 30px; height: 23px;font-size: 25px;}
+  .close{position: relative; top:-40px; left: 400px; width: 30px; height: 23px;font-size: 25px;}     /*닫기 버튼 위치(글씨 컨텐츠 위로 가도록)및 폰트사이즈, 크기 지정*/
 
-  span{display: inline-block; position: absolute; left: 80px;top:40px;font-style: bold;}
+  span{display: inline-block; position: absolute; left: 80px;top:40px;font-style: bold;}              /*닫기 버튼과 글씨 컨텐츠를 묶어 함께 위치 지정*/
 
 
   </style>
 </head>
 <body>
   <header>
-     <a href=index.html> <img class="logo" src="image/logo1.png" width="170" height="130"> </a>
-     <div id="menubar">
+     <a href=index.html> <img class="logo" src="image/logo1.png" width="170" height="130"> </a>    <!-- 로고 이미지-->
+     <div id="menubar">                     <!-- 메뉴바  전체박스-->
        <ul>
-         <li class="topmenu"> <a class="menulink"> 독도에 대한 정부 입장</a>
+         <li class="topmenu"> <a class="menulink"> 독도에 대한 정부 입장</a>                         <!-- 메뉴 1-->
            <ul class="sub">
-             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>
-             <li> <a  class="sublink" href="reason.html" >우리 영토인 근거 </a></li>
+             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>            <!--메뉴1에 속한 서브메뉴1-->
+             <li> <a  class="sublink" href="reason.html" >우리 영토인 근거 </a></li>     <!--메뉴1에 속한 서브메뉴2-->
            </ul>
         </li>
         <li> || </li>
-        <li class="topmenu"><a href="info.html" class="menulink"> 독도 일반 현황 </a></li>
+        <li class="topmenu"><a href="info.html" class="menulink"> 독도 일반 현황 </a></li>       <!--메뉴 2-->
         <li> || </li>
-        <li class="topmenu"><a href="str.html"class="menulink"> 자료실</a> </li>
+        <li class="topmenu"><a href="str.html"class="menulink"> 자료실</a> </li>                <!--메뉴3-->
 
       </ul>
-    <div class="login">ID <input type="text" size="5" value="">
-                       <input type="text" size="5" value="">
-                       <input type="submit" value="로그인">
-                        <a href="sign.html"><input type="submit" value="가입"></a>
+    <div class="login">ID <input type="text" size="5" value="">                               <!--ID상자 -->
+                       <input type="text" size="5" value="">                                  <!--패쓰워드 상자-->
+                       <input type="submit" value="로그인">                                   <!-- 로그인버튼-->
+                        <a href="sign.html"><input type="submit" value="가입"></a>            <!-- 회원가입으로 이동-->
  </header>
-   <sidebar> <h3> 독도에 대한 정부 입장</h3> <hr>
+   <sidebar> <h3> 독도에 대한 정부 입장</h3> <hr>                                              <!--사이드바의 제목-->
    <ul>
-     <li> <a href="gov.html">정부 기본 입장</a> </li>
+     <li> <a href="gov.html">정부 기본 입장</a> </li>                                         <!-- 누르면 gov.html 페이지로 이동-->
      <li>   </li>
-     <li> <a href="reason.html"> 우리 영토인 근거 </a></li>
+     <li> <a href="reason.html"> 우리 영토인 근거 </a></li>                                    <!-- 누르면 이 페이지로 새로고침-->
    </ul>
    </sidebar>
    <contents id="close">
-    <h3> 우리 영토인 근거</h3> <hr>
-    <img  src="image/bg_reason3.png" width="680px">
+    <h3> 우리 영토인 근거</h3> <hr>                                                            <!-- 컨텐츠의 제목-->
+    <img  src="image/bg_reason3.png" width="680px">                                          <!-- 컨텐츠의 배경이 되는 이미지-->
       <div class="mainimage">
       <p class="y512"><a href="#open512">512 </a></p>
       <p class="y1454"><a href="#open1454">1454</a> </p>
-      <p class="y1625"><a href="#open1625">1625</a></p>
+      <p class="y1625"><a href="#open1625">1625</a></p>                                      <!-- 근거가 되는 사건들의 년도들을 -->
       <p class="y1693"><a href="#open1693">1693</a></p>
       <p class="y1694"><a href="#open1694">1694</a></p>
       <p class="y1695"><a href="#open1695">1695</a> </p>
       <p class="y1696"><a href="#open1696">1696</a> </p>
-      <p class="y16962"><a href="#open16962"> 1696</a></p>
+      <p class="y16962"><a href="#open16962"> 1696</a></p>                                <!--말미암아 일종의 버튼으로 만들어서-->
       <p class="y1770"><a href="#open1770">1770 </a></p>
       <p class="y1870"><a href="#open1870">1870</a> </p>
       <p class="y1877"><a href="#open1877">1877</a> </p>
@@ -156,17 +150,17 @@
       <p class="y1905"><a href="#open1905">1905</a> </p>
       <p class="y1906"><a href="#open1906">1906 </p>
       <p class="y1946"><a href="#open1946">1946 </a></p>
-      <p class="y1951"><a href="#open1951">1951</a> </p>
+      <p class="y1951"><a href="#open1951">1951</a> </p>                                   <!--해당 버튼을 클릭하면 조그만 창이 열리는 팝업형식으로 만듬-->
       </div>
 
-      <div class="reason" id="open512">
+      <div class="reason" id="open512">                                                   <!--사건 관련한 이미지-->
         <pre> <img src="image/512.jpg" ><span> <span class="close"><a href="#close">X</a></span>
                                   우산국 복속
 
                           신라 이찬(伊飡) 이사부(異斯夫)가 우산국을
                           정벌하여 신라가 우산국을 복속합니다.
 
-                          이로써 울릉도와 독도는 우리 역사와 함께
+                          이로써 울릉도와 독도는 우리 역사와 함께                            <!--사건 설명-->
                           하기 시작합니다.
 
                           『동국문헌비고』 (1770년)에는
@@ -396,9 +390,9 @@
                         영토에 포함되지 않는다고 볼 수 없습니다. </span></pre> </div>
 
      </contents>
-  </header>
-   <footer style="background: none">
-          <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">
+
+   <footer>
+          <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">             <!-- footer 로고-->
           <div class="text"> 주소: 경상북도 울릉군 울릉읍 독도리 산 1-96 전화: 054-790-6420 팩스번호: 054-272-6515<br>
                                                본 홈페이지의 모든 권리는 독도에 귀속됩니다. COPYRIGHT(C) 2018 DOKDO ALL RIGHTS RESERVED.</div>
 
