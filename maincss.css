@@ -1,12 +1,10 @@
 /*maincss*/
 header{
-  z-index: -5;
   background-image: url("image/dokdo.png.");
-  background-repeat: no-repeat;
-  background-position:center top;
-  height: 700px;
+  background-repeat: no-repeat;                    /*배경화면 이미지를 반복없이 설정*/
+  background-position:center top;                  /*맨 위에 위치하도록 설정*/
+  height: 700px;                                   /*크기와 높이 지정*/
   width: 900px;
-  border:5px ;
   margin-left: 0px;
   margin-right: 20%;
 }
@@ -17,7 +15,7 @@ footer{
   margin-left:0px;
 }
 .logo{
-  display:inline-block;
+  display:inline-block;                            /*로고 이미지의 위치 조정*/
   position: absolute;
  margin-left: 0%;
  margin-top:-10px;
@@ -28,72 +26,58 @@ footer{
   padding: 20px; }
 
 #menubar{
-  display: inline-block;
+  display: inline-block;                         /*display를 inline-block을 주어 한 줄로 배치되게 만듬 */
   height: 30px;
-  width: 761px;
+  width: 761px;                                 /*높이, 크기 및 여백을 주어 위치 조정*/
  margin-left: 130px;
  padding-top: 25px;
  margin-right: 120px;
 }
 
 #menubar ul, li{
-  cursor: pointer;
-  list-style: none;
-  font-size: 19px;
-  float: left;
+  cursor: pointer;                            /*오버했을 때 커서가 pointer(손모양)로 바뀜*/
+  list-style: none;                          /* 마커를 없앴음 */
+  font-size: 19px;                          /*글씨 사이즈 지정*/
+  float: left;                              /*로고의 왼쪽에 위치하도록 지정*/
   line-height:20px;
-  vertical-align:middle;
-  text-align: center;
+  text-align: center;                      /*가운데 정렬*/
 
    }
 
-   a{text-decoration: none;}
-   a:hover{color: red;}
+   a{text-decoration: none;}               /*하이퍼링크 밑줄을 없앴음*/
+   a:hover{color: red;}                    /*앵커에 빨간 색깔 속성을 붙여 오버했을때 빨간색 글씨로 보이게 했음 */
   }
   #menubar ul{
-    list-style-type: none;
-    margin: 0px;
+    list-style-type: none;                /* 마커를 없앴음 */
+    margin: 0px;                          /*컨텐츠 요소가 박스에 꽉차게 */
     padding: 0px;
   }
-  .menulink, .sublink {text-decoration: none;}
- .topmenu:hover{
-   color: red;
-  }
+
 .topmenu:hover .sub {
- height: 32px;
+ height: 32px;                            /*메인 메뉴에 닿았을 때 높이가 32px로 되게 설정*/
 }
 .sublink{
-text-decoration:none;
 display: block;
 width: 150px;
-font-size: 12px;
-font-weight: bold;
-margin-right: 5px;
-border: solid 1px black;
-
+font-size: 12px;                         /*사이드바 메뉴의 글꼴 사이즈 설정*/
+font-weight: bold;                      /*굵게지정*/
+margin-right: 5px;                      /*글자 요소들의 서브컨텐츠박스로부터의 여백 지정*/
+border: solid 1px black;                /*테두리 색깔 검정색 직선형태 1px크기로 지정*/
+color: black;                          /*글씨 색깔 검정색으로 지정*/
+background-color: white;              /*배경색깔 흰색으로 지정*/
+border-radius : 50px;                /*배경 태두레 둥근 원형으로 지정*/
 }
 .sub{
 position: absolute;
 left: 400px;
-top: 80px;;
-height:0px;
-overflow: hidden;
-transition:height.2s;
-width: 770px;
+top: 80px;
+height:0px;                          /*높이를 0으로 설정 */
+overflow: hidden;                    /*평상시에는 내용이 감춰지게 했음*/
+transition:height.2s;                /*높이를 변화 시켰을 때(여기서는 메뉴바에 닿거나 띄어지거나) 0.2초간 변화 되도록 설정 */
+width: 770px;                        /*메뉴바의 넓이와 위치 지정*/
 left:100px;
 }
 
-.sublink{
-color: black;
-background-color: white;
-border-radius : 50px;
-}
-.sublink:hover{
-color: red;
-}
-.sub li{
-display: inline-block;
-}
   .dokdo{
     display: inline-block;
      margin-top: -5%;
