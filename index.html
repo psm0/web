@@ -3,75 +3,58 @@
 <head>
     <link type="text/css" rel="stylesheet" href="maincss.css">
   <style>
-  *{background-size: cover;}
-
-  strong{
-    padding-top: 0px;
-    font-size: 20px;
-  }
+  *{background-size: cover;}                             /* 배경사진 최대 크기로*/
 
   body{
-  width: 1500px;
+  width: 1500px;                                       /*넓이 1500px, 높이 2000px*/
   height: 2000px;
   }
-  sidebar{
-       display: inline-block;
-        background: linear-gradient(#31b7d7 0%, #edac7d 100%);
-
-    	top: 10%;
-    	left : 52%;
-    	width : 300px;
-      height: 200px;
-    	padding : 5px;
-    	color : slategray;
-   }
 
    .slogan{
-     margin-top: 20px;
+     margin-top: 20px;                               /*슬로건 위치: 위에서 부터 20px아래, 왼쪽에서 455px에 위치*/
      margin-left: 455px;
    }
 
    .weather{
-     float: left;
+     float: left;                                   /* 날씨 프레임 :기본적으로 왼쪽에 배치하고 왼쪽으로부터 -15%, 위에서부터 -10% 떨어진 곳에 위치*/
      margin-left: -15%;
      margin-top: -10%;
-
-     overflow: hidden;
+     overflow: hidden;                             /* 컨텐츠가 넘치면 감춰지게 함*/
    }
-   .weather:hover{
-     width:800px;
+   .weather:hover{                                /*마우스가 컨텐츠 위에 오버했을때*/
+     width:800px;                                 /*넓이 800px, 높이 400px 됨 */
      height:400px;
    }
-   .dokdo{
-     display: inline-block;
-     margin-top: -5%;
+   .dokdo{                                       /* footer 사진 : */
+     display: inline-block;                      /* margin 속성 부여하기 위해 inline-block 부여*/
+     margin-top: -5%;                            /*위에서부터 -5% 에 위치*/
    }
    .text{
-    font-size: 13px;
+    font-size: 13px;                            /* footer 글: 폰트 사이즈 13px, 굵게 */
     font-weight: bold;
-    margin-top:-14.5%;
+    margin-top:-14.5%;                         /* 위치 :위에서 -14.5%, 왼쪽에서 25%*/
     margin-left: 25%;
   }
   .go{
-    margin-left: -21.5%;
+    margin-left: -21.5%;                      /* 자료실 이미지 위치 조정*/
     margin-top: 20%;
   }
-  .now{
+  .now{                                       /* 자료실 글씨 : */
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bold;                        /*  폰트 사이즈 20px, 굵게, 흰색 */
     color: white;
-  width: 120px;
-  margin-left: -4.1%
+    width: 120px;                            /* 넓이 120px, 왼쪽으로부터 -4.1% 위치 하도록 조정 */
+    margin-left: -4.1%
   }
-  .hot{
-    font-size: 20px;
+  .hot{                                     /*날씨 프레임  옆 글자 : */
+    font-size: 20px;                        /*폰트 사이즈 20px, 굵게, 노란색 글씨 */
     font-weight:bold;
     color: yellow;
-    margin-left:14%;
+    margin-left:14%;                        /* 왼쪽으로부터 14% 위로부터 -8%위치 하도록 조정 */
     margin-top:-8%
   }
   .video{
-    margin-left: 58%
+    margin-left: 58%                        /* 독도 영상 왼쪽으로부터 58% 위치하도록 조정*/
 
   }
 
@@ -80,39 +63,39 @@
   <body>
 
   <header>
-    <a href="index.html"> <img class="logo" src="image/logo1.png" width="170" height="130"></a>
-     <div id="menubar">
+    <a href="index.html"> <img class="logo" src="image/logo1.png" width="170" height="130"></a>   <!-- 로고 이미지-->
+     <div id="menubar">                             <!-- 메뉴바  전체박스-->
        <ul>
-         <li class="topmenu"> <a class="menulink" href="gov.html"> 독도에 대한 정부 입장</a>
+         <li class="topmenu"> <a class="menulink" href="gov.html"> 독도에 대한 정부 입장</a>                        <!-- 메뉴 1-->
            <ul class="sub">
-             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>
-             <li> <a  class="sublink" href="reason.html">우리 영토인 근거 </a></li>
+             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>           <!--메뉴1에 속한 서브메뉴1-->
+             <li> <a  class="sublink" href="reason.html">우리 영토인 근거 </a></li>     <!--메뉴1에 속한 서브메뉴2-->
            </ul>
         </li>
         <li> || </li>
-        <li class="topmenu"><a class="menulink" href="info.html"> 독도의 지리정보 </a></li>
+        <li class="topmenu"><a class="menulink" href="info.html"> 독도의 지리정보 </a></li>       <!--메뉴 2-->
         <li> || </li>
-        <li class="topmenu"><a class="menulink" href="str.html"> 자료실</a> </li>
+        <li class="topmenu"><a class="menulink" href="str.html"> 자료실</a> </li>                <!--메뉴3-->
 
       </ul>
-    <div class="login">&nbsp;&nbsp;ID <input type="text" size="5" value="">
-                       PW <input type="text" size="5" value="">
-                       <input type="submit" value="로그인">
-                       <a href="sign.html"><input type="submit" value="가입"></a>
+    <div class="login"> ID <input type="text" size="5" value="">                               <!--ID상자 -->
+                       PW <input type="text" size="5" value="">                                <!--패쓰워드 상자-->
+                       <input type="submit" value="로그인">                                    <!-- 로그인버튼-->
+                       <a href="sign.html"><input type="submit" value="가입"></a>              <!-- 회원가입으로 이동-->
                     </div>
-   <img  class="slogan" src="image/slogan.png" width="300px" height="100px">
+   <img  class="slogan" src="image/slogan.png" width="300px" height="100px">                  <!--홈페이지 슬로건 이미지-->
 
-     <iframe class="weather" src="http://www.weather.go.kr/weather/main.jsp" width="200" height="50"> </iframe>
-      <div class="hot">>독도의 날씨는?</div>
-    <a href="str.html"> <img class="go" src="image/photo_1.png" width="150px" height="100px"></a>
-     <div class="now">자료실</div>
+     <iframe class="weather" src="http://www.weather.go.kr/weather/main.jsp" width="200" height="50"> </iframe>     <!--독도의 날씨 홈페이지를 인라인프레임안에 포함시키게 함-->
+      <div class="hot">>독도의 날씨는?</div>                                                                         <!-- 옆에 글자-->
+    <a href="str.html"> <img class="go" src="image/photo_1.png" width="150px" height="100px"></a>                   <!--자료실 이미지-->
+     <div class="now">자료실</div>                                                                                  <!-- 자료실 글자-->
 
-         <video class="video" src="image/dokdo hongbo.mp4" width="200" height="100"  controls>  </video>
+         <video class="video" src="image/dokdo hongbo.mp4" width="200" height="100"  controls>  </video>            <!-- 독도 홍보 영상-->
  </header>
   </div>
 <footer>
- <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">
- <div class="text"> 주소: 경상북도 울릉군 울릉읍 독도리 산 1-96 전화: 054-790-6420 팩스번호: 054-272-6515<br>
+ <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">                                    <!-- footer 로고-->
+ <div class="text"> 주소: 경상북도 울릉군 울릉읍 독도리 산 1-96 전화: 054-790-6420 팩스번호: 054-272-6515<br>      <!--footer 글-->
                     본 홈페이지의 모든 권리는 독도에 귀속됩니다. COPYRIGHT(C) 2018 DOKDO ALL RIGHTS RESERVED.</div>
 
 </footer>
