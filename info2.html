@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="maincss.css">
+  <style>
+  .foot{                                                        /*푸터 의 글씨 크기와 글씨 자리 설정*/
+    font-size: 13px;
+    font-weight: bold;
+    margin-top:-14.5%;
+    margin-left: 25%;
+  }
+  .page{                                                     /*설명 공간 설정*/
+    width: 630px;
+    height: 400px;
+    margin-top: 100px;
+    background-image: url("image/square.jpg");                /*테두리 이미지 삽입*/
+  }
+
+.fieldset{                                           /*글씨 테두리 설정*/
+  width: 265px;
+  height: 280px;
+  margin-left: 320px;
+  margin-top: -330px;
+}
+.left{                                          /*왼쪽 버튼 설정*/
+  width: 80px;
+  height: 80px;
+ float: left;
+ margin-left: -100px;
+ margin-top: -240px;
+
+}
+.right{                                         /*오른쪽 버튼 설정*/
+  width: 80px;
+  height: 80px;
+ float: right;
+ margin-right: 25px;
+ margin-top: -240px;
+}
+.map2{                                           /*내용 이미지 위치지정*/
+  margin-left:40px;
+  margin-top: 35px;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <a href="index.html"> <img class="logo" src="image/logo1.png" width="170" height="130"></a>    <!-- 로고 삽입 -->
+     <div id="menubar">                   <!-- 메뉴바  전체에 해당하는 박스-->
+       <ul>
+         <li class="topmenu"> <a class="menulink" href="gov.html"> 독도에 대한 정부 입장</a>      <!-- 메뉴 1-->
+           <ul class="sub">
+             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>           <!--메뉴1에 속한 서브메뉴1-->
+             <li> <a  class="sublink" href="reason.html">우리 영토인 근거 </a></li>     <!--메뉴1에 속한 서브메뉴2-->
+           </ul>
+        </li>
+        <li> || </li>
+        <li class="topmenu"><a class="menulink" href="info.html"> 독도의 지리정보 </a></li>        <!--메뉴 2-->
+        <li> || </li>
+        <li class="topmenu"><a class="menulink" href="str.html"> 자료실</a> </li>                  <!--메뉴3-->
+
+      </ul>
+    <div class="login">ID <input type="text" size="5" value="">                        <!--ID상자 -->
+                       PW <input type="text" size="5" value="">                                    <!--패쓰워드 상자-->
+                       <input type="submit" value="로그인">                                        <!-- 로그인버튼-->
+                       <a href="sign.html"><input type="submit" value="가입"></a>                  <!-- 회원가입으로 이동-->
+                    </div>
+    <div class="page">                     <!--페이지 -->
+      <img class="map2" src="image/map.jpg" width="280" height="330">       <!--이미지 삽입 -->
+    <div class="fieldset">  <fieldset>               <!--글 테두리 삽입 -->
+        <legend><strong>관계 정보</strong></legend>            <!-- 제목-->
+        일본에서는 이 섬이 한국 영토가 아니라 시마네 현 오키 군 오키노시마 정(오키 제도)에 딸린 섬 다케시마(竹島)며
+         대한민국이 강제 점령하고 있으니 돌려받아야 한다고 주장한다. 이로 말미암아 벌어지는 외교 분쟁이 유명하다.<br>
+         울릉도 동남쪽 87.4㎞ 바다 위에 있는 바위섬들로, 울릉도의 고지대에서 맨눈으로 볼 수 있는          <!--내용 -->
+         대한민국 최동단에 있는 섬이다. 한반도 본토에서 가장 멀리 떨어진 섬이다.
+      </fieldset></div>
+    </div>
+      <a href="info1.html"><img class="left" src="image/left.png"></a> <!-- 화살표 이미지 삽입-->
+  </header>
+  <footer>
+    <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">
+    <div class="foot"> 주소: 경상북도 울릉군 울릉읍 독도리 산 1-96 전화: 054-790-6420 팩스번호: 054-272-6515<br>
+                       본 홈페이지의 모든 권리는 독도에 귀속됩니다. COPYRIGHT(C) 2018 DOKDO ALL RIGHTS RESERVED.</div>
+  </footer>
+</body>
+</html>
