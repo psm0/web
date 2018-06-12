@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="maincss.css">
+  <Style>
+
+    sidebar{                              /*사이드바*/
+      position: absolute;
+      left: 5px;                          /* 왼쪽에 배치되게 조정*/
+      top: 145px;
+      background-color: lightblue;        /*배경색깔 : lightblue*/
+      border-width: 20px;
+      border-style: solid;                /*굵기의 스타일,색깔, 크기지정*/
+      border-color: lightblue;
+      width: 205px;
+      height: 600px;
+
+    }
+
+    contents{
+      font-size: 15px;                    /*글자 요소들의 폰트 사이즈와 위치 지정*/
+      position: absolute;
+      left: 250px;
+      top: 145px;
+      width: 655px;
+      background-color: white;           /*컨텐츠 상자 배경색깔 흰색*/
+      border: 15px solid white;          /*테두리 굵기, 스타일, 색깔 지정*/
+    }
+
+    sidebar li{
+      line-height: 200%;                /*줄간격 200%*/
+    }
+
+    footer img{
+      position: relative;          /*푸터 이미지 위치 지정*/
+      top: 200px;
+      left: 60px;
+    }
+    .text{position: relative; top: 70px; left: 300px;}     /*푸터 글씨 위치 지정*/
+
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"> <img class="logo" src="image/logo1.png" width="170" height="130"></a>    <!-- 로고 삽입 -->
+     <div id="menubar">                   <!-- 메뉴바  전체에 해당하는 박스-->
+       <ul>
+         <li class="topmenu"> <a class="menulink" href="gov.html"> 독도에 대한 정부 입장</a>      <!-- 메뉴 1-->
+           <ul class="sub">
+             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>           <!--메뉴1에 속한 서브메뉴1-->
+             <li> <a  class="sublink" href="reason.html">우리 영토인 근거 </a></li>     <!--메뉴1에 속한 서브메뉴2-->
+           </ul>
+        </li>
+        <li> || </li>
+        <li class="topmenu"><a class="menulink" href="info.html"> 독도의 지리정보 </a></li>        <!--메뉴 2-->
+        <li> || </li>
+        <li class="topmenu"><a class="menulink" href="str.html"> 자료실</a> </li>                  <!--메뉴3-->
+
+      </ul>
+    <div class="login">ID <input type="text" size="5" value="">                        <!--ID상자 -->
+                       PW <input type="text" size="5" value="">                                    <!--패쓰워드 상자-->
+                       <input type="submit" value="로그인">                                        <!-- 로그인버튼-->
+                       <a href="sign.html"><input type="submit" value="가입"></a>                  <!-- 회원가입으로 이동-->
+                    </div>
+    <sidebar> <h3> 독도에 대한 정부 입장</h3> <hr>                                               <!--사이드바의 제목-->
+      <ul>
+        <li> <a href="gov.html">정부 기본 입장</a> </li>                            <!-- 누르면 이페이지로 새로고침-->
+
+        <li> <a href="reason.html"> 우리 영토인 근거 </a></li>                      <!-- 누르면 reason.html 페이지로 이동-->
+      </ul>
+    </sidebar>
+
+    <contents > <h2> 정부 기본 입장 </h2> <hr>                                     <!-- 컨텐츠의 제목-->
+      <br>
+          독도에 대한 정부의 기본 입장
+          <p>독도는 역사적, 지리적, 국제법적으로 명백한 우리 고유의 영토입니다. <br>
+          독도에 대한 영유권 분쟁은 존재하지 않으며, 독도는 외교 교섭이나 사법적 해결의 대상이 될 수 없습니다.</p>
+          <p>우리 정부는 독도에 대한 확고한 영토주권을 행사하고 있습니다. <br>
+          우리 정부는 독도에 대한 어떠한 도발엗 단호하고 엄중하게 대응하고 있으며, <br>
+          앞으로도 지속적으로 독도에 대한 우리의 주권을 수호해 나가겠습니다. </p>
+          <img src="image/gs2.png">                <!-- 컨텐츠 밑 그림-->
+    </contents>
+</header>
+<footer >
+     <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">      <!-- footer 로고-->
+     <div class="text"> 주소: 경상북도 울릉군 울릉읍 독도리 산 1-96 전화: 054-790-6420 팩스번호: 054-272-6515<br>
+                        본 홈페이지의 모든 권리는 독도에 귀속됩니다. COPYRIGHT(C) 2018 DOKDO ALL RIGHTS RESERVED.</div>
+
+</footer>
+
+</body>
+</html>
