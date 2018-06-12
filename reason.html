@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="maincss.css">
+  <Style>
+  sidebar{                                          /*사이드바*/
+    position: absolute;
+    left: 5px;
+    top: 145px;                                   /* 왼쪽에 배치되게 조정*/
+    background-color: lightblue;
+    border-width: 20px;                          /*배경색깔 : lightblue*/
+    border-style: solid;
+    border-color: lightblue;
+    width: 205px;                               /*굵기의 스타일,색깔, 크기지정*/
+    height: 600px;
+  }
+
+  sidebar li{
+    line-height: 200%;                        /*줄간격 200%*/
+  }
+
+  footer img{
+    position: relative;
+    top: 200px;                                 /*푸터 이미지 위치 지정*/
+    left: 60px;
+  }
+  .text{position: relative; top: 70px; left: 300px;}    /*푸터 글씨 위치 지정*/
+
+  contents{
+    position: absolute;
+    background-color: white;                        /*컨텐츠 요소들의 위치, 배경색깔 지정*/
+    top:145px;
+    left:230px;
+    border-style: solid;                            /*테두리 스타일, 색깔, 크기 지정*/
+    border-color: white;
+    border-width: 20px;
+  }
+  p {display:inline-block;                         /*자유롭게 배치되도록 조정*/
+    background : #90D000;                         /*요소 색깔*/
+    width : 17px; padding : 10px;                /*크기, 글자여백 지정*/
+    border-radius: 50px;                         /*요소들이 원형이 되게 지정*/
+    font-size: 10px;                            /*년도 글씨 크기*/
+    font-weight: bold;                          /*년도가 굵게 나오도록 지정*/
+  }
+
+  .y512{position:absolute; top:170px;left:15px;}                 /*각 요소(버튼)들의 위치 지정*/
+  .y1454{position:absolute; top:130px; left:90px;}
+  .y1625{position:absolute; top:100px; left:170px;}
+  .y1693{position:absolute; top:130px; left:260px;}
+  .y1694{position:absolute; top:195px; left:305px;}
+  .y1695{position:absolute; top:230px; right:300px;}
+  .y1696{position:absolute; top:250px; right:235px;}
+  .y16962{position:absolute; top:290px; right:180px;}
+  .y1770{position:absolute; top:340px; right:130px;}
+  .y1870{position:absolute; bottom:270px; right:90px;}
+  .y1877{position:absolute; bottom:210px; right:120px;}
+  .y1900{position:absolute; bottom:240px; right:220px;}
+  .y1905{position:absolute; bottom:230px; left:320px;}
+  .y1906{position:absolute; bottom:190px; left:220px;}
+  .y1946{position:absolute; bottom:270px; left:100px;}
+  .y1951{position:absolute; top:300px; left:10px;}
+
+
+      .reason{                                        /*작은 창 내용에 대한 속성들을 지정*/
+        position: absolute;                          /*작은 창 박스에 대한 위치들을 지정(작은창 뿐만 아니라 그에 대한 배경포함해서)*/
+        top: -1000px;
+        right: -1000px;
+        bottom: -1000px;
+        left: -1000px;
+        background:rgba(0,0,0,0.7);                  /*배경 색깔 어둡게 지정*/
+        opacity: 0;                                 /*평상시에는 보이지 않게 하려고 투명도를 0으로 지정 */
+        transition: opacity 400ms ease-in;          /*opacity값을 400ms의 속도로 ease-in 서서히 진행하라라는 의미(0에서 1로든 1에서 0으로든) */
+        pointer-events: none;                      /*HTML 요소에서의 모든 클릭, 커서 옵션들을 비활성화해주는 속성 */
+        }
+      .reason:target{
+        opacity: 1;                              /*타겟(선택)되었을때 비로소 보임 */
+        pointer-events: auto;                    /*앞에서 비활성화되었던 이벤트를 다시 기본기능으로 해줌 */
+      }
+
+      .reason pre{                                 /*작은 창에서의 이미지, 글씨들(즉, 컨텐츠들)의 속성을 지정 */
+        position: absolute;
+        top:30%;
+        left: 30%;                                /*작은 창 위치 지정*/
+        min-width: 500px;                        /*최소 크기 500px로 지정*/
+        min-height: 100px;                       /*최소 높이 100px로 지정*/
+        padding: 16px;                          /*컨텐츠들의 여백 간격 조정*/
+        margin: 250px;
+        border-top: 26px solid orange;          /*테두리 위에만 26PX크기에 직선형태, 오렌지색깔로 지정*/
+        background-color: white;                /*배경색깔은 흰색으로 지정*/
+        overflow: scroll;                       /*컨텐츠 요소가 넘쳤을때 스크롤링 되게 지정*/
+      }
+
+    pre img{
+      display: inline-block;
+      margin-top:  40px;                        /*이미지 자체의 크기에 대한 여백 때문에 따로 조정함*/
+      margin-left: 20px;}
+
+  .close{position: relative; top:-40px; left: 400px; width: 30px; height: 23px;font-size: 25px;}     /*닫기 버튼 위치(글씨 컨텐츠 위로 가도록)및 폰트사이즈, 크기 지정*/
+
+  span{display: inline-block; position: absolute; left: 80px;top:40px;font-style: bold;}              /*닫기 버튼과 글씨 컨텐츠를 묶어 함께 위치 지정*/
+
+
+  </style>
+</head>
+<body>
+  <header>
+     <a href=index.html> <img class="logo" src="image/logo1.png" width="170" height="130"> </a>    <!-- 로고 이미지-->
+     <div id="menubar">                     <!-- 메뉴바  전체박스-->
+       <ul>
+         <li class="topmenu"> <a class="menulink"> 독도에 대한 정부 입장</a>                         <!-- 메뉴 1-->
+           <ul class="sub">
+             <li> <a  class="sublink" href="gov.html">정부 기본입장</a> </li>            <!--메뉴1에 속한 서브메뉴1-->
+             <li> <a  class="sublink" href="reason.html" >우리 영토인 근거 </a></li>     <!--메뉴1에 속한 서브메뉴2-->
+           </ul>
+        </li>
+        <li> || </li>
+        <li class="topmenu"><a href="info.html" class="menulink"> 독도 일반 현황 </a></li>       <!--메뉴 2-->
+        <li> || </li>
+        <li class="topmenu"><a href="str.html"class="menulink"> 자료실</a> </li>                <!--메뉴3-->
+
+      </ul>
+    <div class="login">ID <input type="text" size="5" value="">                               <!--ID상자 -->
+                       <input type="text" size="5" value="">                                  <!--패쓰워드 상자-->
+                       <input type="submit" value="로그인">                                   <!-- 로그인버튼-->
+                        <a href="sign.html"><input type="submit" value="가입"></a>            <!-- 회원가입으로 이동-->
+ </header>
+   <sidebar> <h3> 독도에 대한 정부 입장</h3> <hr>                                              <!--사이드바의 제목-->
+   <ul>
+     <li> <a href="gov.html">정부 기본 입장</a> </li>                                         <!-- 누르면 gov.html 페이지로 이동-->
+     <li>   </li>
+     <li> <a href="reason.html"> 우리 영토인 근거 </a></li>                                    <!-- 누르면 이 페이지로 새로고침-->
+   </ul>
+   </sidebar>
+   <contents id="close">
+    <h3> 우리 영토인 근거</h3> <hr>                                                            <!-- 컨텐츠의 제목-->
+    <img  src="image/bg_reason3.png" width="680px">                                          <!-- 컨텐츠의 배경이 되는 이미지-->
+      <div class="mainimage">
+      <p class="y512"><a href="#open512">512 </a></p>
+      <p class="y1454"><a href="#open1454">1454</a> </p>
+      <p class="y1625"><a href="#open1625">1625</a></p>                                      <!-- 근거가 되는 사건들의 년도들을 -->
+      <p class="y1693"><a href="#open1693">1693</a></p>
+      <p class="y1694"><a href="#open1694">1694</a></p>
+      <p class="y1695"><a href="#open1695">1695</a> </p>
+      <p class="y1696"><a href="#open1696">1696</a> </p>
+      <p class="y16962"><a href="#open16962"> 1696</a></p>                                <!--말미암아 일종의 버튼으로 만들어서-->
+      <p class="y1770"><a href="#open1770">1770 </a></p>
+      <p class="y1870"><a href="#open1870">1870</a> </p>
+      <p class="y1877"><a href="#open1877">1877</a> </p>
+      <p class="y1900"><a href="#open1900"> 1900</a></p>
+      <p class="y1905"><a href="#open1905">1905</a> </p>
+      <p class="y1906"><a href="#open1906">1906 </p>
+      <p class="y1946"><a href="#open1946">1946 </a></p>
+      <p class="y1951"><a href="#open1951">1951</a> </p>                                   <!--해당 버튼을 클릭하면 조그만 창이 열리는 팝업형식으로 만듬-->
+      </div>
+
+      <div class="reason" id="open512">                                                   <!--사건 관련한 이미지-->
+        <pre> <img src="image/512.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                                  우산국 복속
+
+                          신라 이찬(伊飡) 이사부(異斯夫)가 우산국을
+                          정벌하여 신라가 우산국을 복속합니다.
+
+                          이로써 울릉도와 독도는 우리 역사와 함께                            <!--사건 설명-->
+                          하기 시작합니다.
+
+                          『동국문헌비고』 (1770년)에는
+                          “울릉(울릉도)과 우산(독도)은 모두 우산국의
+                          땅”이라고 기술했습니다.</span>  </pre></div>
+
+      <div class="reason" id="open1454">
+          <pre> <img src="image/1454.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                            『세종실록』「지리지」
+
+                        조선 초기 관찬서인 『세종실록』「지리지」
+                        (1454년)는 울릉도와 독도가 강원도 울진현에
+                        속한 두 섬이라고 기록하고 있습니다.
+
+                        특히 “우산(독도) 무릉(울릉도)… 두 섬은
+                        서로 멀리 떨어져 있지 않아 날씨가 맑으면
+                        바라볼 수 있다.”라고 기록하고 있는데,
+                        울릉도에서 날씨가 맑은 날 육안으로 보이는
+                        섬은 독도가 유일합니다. </span> </pre></div>
+
+      <div class="reason" id="open1625">
+        <pre> <img src="image/1625.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                            다케시마(竹島, 울릉도) 도해(渡海) 면허
+
+                        일본 막부가 돗토리번(지금의 돗토리현)에
+                        살고 있는 오야·무라카와(大谷·村川) 양가에
+                        다케시마(竹島, 울릉도) 도해(渡海)를
+                        면허한 것입니다.
+
+                        면허를 내린 시기는 1618년, 또는
+                        1625년이라고도 합니다. </span></pre> </div>
+
+      <div class="reason" id="open1693">
+          <pre> <img src="image/1693.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                            안용복(安龍福) 일본 납치
+
+                          안용복(安龍福), 박어둔(朴於屯) 두 사람이
+                          울릉도에서 어업을 하다가 울릉도에 온 일본
+                          오야·무라카와(大谷·村川) 양가의 선원들에게
+                          잡혀서 일본으로 끌려간 사건입니다.
+
+                          이 사건으로 인해 조선과 일본 간의 울릉도
+                          영유권에 대한 분쟁(울릉도 쟁계)이 발생합니다.  </span></pre> </div>
+
+      <div class="reason" id="open1694">
+          <pre> <img src="image/1694.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                              울릉도 수토제도 시행결정
+
+                          안용복 사건으로 인해 일본과 울릉도
+                          영유권에 대한 분쟁(울릉도 쟁계)이
+                          발생하자, 조선 정부는 삼척첨사
+                          장한상(張漢相)을 울릉도에 파견하여
+                          울릉도의 현황을 조사합니다.
+
+                          그 이후 영의정 남구만의 건의에 따라 2년
+                          걸러 한 번씩 관원을 울릉도에 파견하여
+                          수토*를 하기로 결정합니다.
+
+                          * 수토 : 무엇을 알아내거나 찾기 위해서
+                           조사하거나 살핌.  </span></pre> </div>
+
+     <div class="reason" id="open1695">
+        <pre> <img src="image/1695.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                                일본 돗토리번 답변
+
+                          일본 막부는 울릉도 영유권에 대해
+                          알아보기 위해 돗토리번에 울릉도의
+                          소속을 질문(12월 24일)했습니다.
+
+                          이에 대해 돗토리번이 막부에
+                          다케시마(울릉도)와 마쓰시마(독도)가
+                          돗토리번의 소속이 아니라고
+                          답변(12월 25일)함에 따라 막부는 울릉도와
+                          독도가 일본령이 아님을 공식적으로
+                          확인합니다.  </span></pre> </div>
+
+    <div class="reason" id="open1696">
+       <pre> <img src="image/1696.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                           1월. 다케시마(울릉도) 도해금지령
+
+                       일본 막부는 돗토리번을 통해 울릉도와
+                       독도가 일본령이 아님을 확인하고
+                       다케시마(울릉도) 도해금지령을 내렸습니다
+                       (1696년 1월 28일).
+
+                       이후 조선과의 외교문서를 통해 울릉도가
+                       조선령임을 공식 확인하였습니다(1699년). </span></pre> </div>
+
+    <div class="reason" id="open16962">
+       <pre> <img src="image/16962.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                               5월. 안용복(安龍福) 일본 도해
+
+                         안용복(安龍福)이 울릉도에 어업 온 일본
+                         어선을 추격하여 독도(자산도)에서
+                         쫓아버리고, 일본에까지 다녀온 사건입니다.
+
+                         이때 안용복이 오키섬 관리에게 울릉도와
+                         독도가 조선령이라고 진술한 기록이
+                         「원록9병자년조선주착안일권지각서」에
+                         실려 있습니다.   </span></pre> </div>
+
+    <div class="reason" id="open1770">
+        <pre> <img src="image/1770.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                              『동국문헌비고』「여지고」
+
+                          국왕 영조의 명에 의해 조선의 문물제도를
+                          기록한 관찬서입니다.
+
+                          이 책에는 “우산도(독도)와 울릉도…
+                          두 섬으로 하나가 바로 우산이다...
+                          「여지지」에 이르기를, 울릉과 우산은
+                          모두 우산국의 땅인데, 우산은 일본이
+                          말하는 송도(松島)다.”라고 하였습니다. </span></pre> </div>
+
+    <div class="reason" id="open1870">
+        <pre> <img src="image/1870.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                                일 외무성
+
+                          『조선국교제시말내탐서』
+                          1870년 외무성 관리인 사다 하쿠보(佐田白茅)
+                          등이 조선을 시찰한 후 외무성에 제출한
+                          보고서입니다.
+
+                          이 보고서에는 “다케시마(울릉도)와
+                          마쓰시마(독도)가 조선 부속이 된 사정”이
+                          언급되어 있어, 당시 일본 외무성이
+                          두 섬을 조선 영토로 인식했다는 것을
+                          알 수 있습니다. </span></pre> </div>
+
+    <div class="reason" id="open1877">
+        <pre> <img src="image/1877.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                              「태정관(太政官)지령」
+
+                        1877년 3월 일본 최고 행정기구인
+                        태정관이 내무성에 울릉도와 독도가
+                        일본령이 아니라고 내린 지령입니다.
+
+                        태정관은 17세기 에도 막부와 조선
+                        정부 간 교섭(울릉도쟁계) 결과 울릉도와
+                        독도가 일본 소속이 아님이 확인되었다고
+                        판단하고, “다케시마(울릉도) 외
+                        일도(一嶋, 독도)의 건에 대해
+                        본방(本邦, 일본)과는 관계가 없음을
+                        명심할 것”이라는 지시를 내무성에
+                        내렸던 것입니다.  </span></pre> </div>
+
+    <div class="reason" id="open1900">
+      <pre> <img src="image/1900.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                              칙령(勅令) 제41호 반포
+
+                        고종 황제는 칙령으로 ‘울릉도(欝陵島)를
+                        울도(欝島)로 개칭(改稱)하고
+                        도감(島監)을 군수(郡守)로 개정(改正)한
+                        건(件)’을 제정 반포했습니다.
+
+                        이 칙령 제2조에 울도군(欝島郡)의 관할
+                        구역으로 울릉전도(欝陵全島),
+                        죽도(竹島)와 함께 석도(石島, 독도)를
+                        규정하여 독도가 울도군의 관할임을
+                        명확히 했습니다.  </span></pre> </div>
+
+    <div class="reason" id="open1905">
+        <pre> <img src="image/1905.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                            시마네현고시(島根縣告示) 제40호
+
+                        일본의 독도 영토 편입을 알리는 지방
+                        고시입니다.
+
+                        일본은 1904년 이래 만주와 한반도에 대한
+                        이권을 두고 러시아와 전쟁 과정에서
+                        동해에서의 해전을 위한 군사적 필요성에
+                        의해 1905년 독도를 무주지라 주장하면서
+                        영토 편입을 시도하고 시마네현에
+                        고시했습니다.  </span></pre> </div>
+
+    <div class="reason" id="open1906">
+        <pre> <img src="image/1906.jpg" ><span> <span class="close"><a href="#close">X</a></span>
+                              3월. 울도군수 심흥택 보고서
+
+                        울도군수 심흥택이 울릉도를 방문한 일본
+                        시마네현 관민 조사단으로부터 일본이
+                        독도를 영토 편입했다는 소식을 듣고,
+                        다음 날 강원도 관찰사와
+                        내부(內部, 현재의 안전행정부에 해당)에
+                        보고한 문서입니다.
+
+                        이 보고서에는 “본군 소속 독도”라고 하여
+                        독도가 울도군의 관할임을 분명히
+                        했습니다.  </span></pre> </div>
+
+    <div class="reason" id="open1946">
+      <pre> <img src="image/1946.jpg" ><span> <span class="close" ><a href="#close">X</a></span>
+                        1월 29일. 연합국최고사령관
+
+                        각서(SCAPIN) 제677호
+                        제2차 세계대전 종전 후 일본의 통치 행정
+                        범위에서 독도를 제외시킨 각서입니다.
+
+                        연합국 최고사령관은 일본의 영역에서
+                        “울릉도, 리앙쿠르암(독도)과 제주도는
+                        제외된다.”라고 규정하였습니다.
+
+                        6월 22일. 연합국최고사령관
+                        각서(SCAPIN) 제1033호
+                        연합국 최고사령관이 SCAPIN 제677호에
+                        이어 일본의 선박 및 국민이 독도 또는
+                        독도 주변 12해리 이내에 접근하는 것을
+                        금지한 각서입니다.   </span></pre> </div>
+
+    <div class="reason" id="open1951">
+        <pre> <img src="image/1951.jpg" ><span> <span class="close" ><a href="#close">X</a></span>
+                        샌프란시스코 강화조약 체결
+
+                        샌프란시스코 강화조약은 제2차
+                        세계대전을 종결하면서 연합국과 일본이
+                        체결한 조약입니다.
+
+                        이 조약 제2조(a)에서 “일본은 한국의
+                        독립을 인정하고, 제주도, 거문도 및
+                        울릉도를 포함한 한국에 대한 모든 권리,
+                        권원 및 청구권을 포기한다.”라고
+                        규정했습니다.
+
+                        이는 한국의 3천여 개의 도서 가운데
+                        예시에 불과하며, 독도가 직접적으로
+                        명시되지 않았다고 하여 독도가 한국의
+                        영토에 포함되지 않는다고 볼 수 없습니다. </span></pre> </div>
+
+     </contents>
+
+   <footer>
+          <img  class="dokdo" src="image/독도로고.png" width="250px" height="200px">             <!-- footer 로고-->
+          <div class="text"> 주소: 경상북도 울릉군 울릉읍 독도리 산 1-96 전화: 054-790-6420 팩스번호: 054-272-6515<br>
+                                               본 홈페이지의 모든 권리는 독도에 귀속됩니다. COPYRIGHT(C) 2018 DOKDO ALL RIGHTS RESERVED.</div>
+
+ </footer>
+
+ </body>
+ </html>
